@@ -23,7 +23,6 @@ class UpdateModels extends Command
             'User.php',
             'SubjectModel.php',
             'StudentAttendanceModel.php',
-            'StudentAddFeesModel.php',
             'SettingModel.php',
             'NoticeBoardModel.php',
             'HomeworkSubmitModel.php',

@@ -145,30 +145,8 @@
         </ul>
       </li>
 
-      <li class="nav-item  @if(Request::segment(2) == 'fees_collection') menu-is-opening menu-open @endif">
-        <a href="#" class="nav-link  @if(Request::segment(2) == 'fees_collection') active @endif">
-          <i class="nav-icon fas fa-money-bill-wave"></i>
-          <p>
-            Pengumpulan Biaya
-            <i class="fas fa-angle-left right"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="{{ url('admin/fees_collection/collect_fees') }}" class="nav-link @if(Request::segment(3) == 'collect_fees') active @endif">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Mengumpulkan Biaya</p>
-            </a>
-          </li>
 
-          <li class="nav-item">
-            <a href="{{ url('admin/fees_collection/collect_fees_report') }}" class="nav-link @if(Request::segment(3) == 'collect_fees_report') active @endif">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Mengumpulkan Laporan Biaya</p>
-            </a>
-          </li>
-        </ul>
-      </li>
+
 
       <li class="nav-item  @if(Request::segment(2) == 'examinations') menu-is-opening menu-open @endif">
         <a href="#" class="nav-link  @if(Request::segment(2) == 'examinations') active @endif">
@@ -448,14 +426,7 @@
           </a>
         </li>
 
-       <li class="nav-item">
-        <a href="{{ url('student/fees_collection') }}" class="nav-link @if(Request::segment(2) == 'fees_collection') active @endif">
-          <i class="nav-icon fas fa-money-bill-wave"></i>
-          <p>
-            Pengumpulan Biaya
-          </p>
-        </a>
-      </li>
+
 
       <li class="nav-item">
         <a href="{{ url('student/my_calendar') }}" class="nav-link @if(Request::segment(2) == 'my_calendar') active @endif">

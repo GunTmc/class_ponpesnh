@@ -30,13 +30,6 @@
                     <input type="text" class="form-control" name="name" required placeholder="Class Name">
                   </div>
 
-
-                  <div class="form-group">
-                    <label>Jumlah (Rp)</label>
-                    <input type="number" class="form-control" name="amount" required placeholder="Amount">
-                  </div>
-
-
                   <div class="form-group">
                     <label>Status</label>
                     <select class="form-control" name="status">

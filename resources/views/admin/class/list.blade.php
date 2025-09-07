@@ -66,7 +66,6 @@
                       <tr>
                         <th class="text-nowrap">#</th>
                         <th> Nama</th>
-                        <th class="text-nowrap"> Jumlah</th>
                         <th class="text-nowrap"> Status</th>
                         <th>Dibuat Oleh</th>
                         <th class="text-nowrap"> Tanggal Dibuat</th>
@@ -78,7 +77,6 @@
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $value->name }}</td>
-                          <td>{{ number_format($value->amount, 2) }}</td>
                           <td>
                             @if($value->status == 0)
                               <span class="badge badge-success">Aktif</span>

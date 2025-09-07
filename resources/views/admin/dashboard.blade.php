@@ -18,31 +18,9 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>Rp{{ number_format($getTotalFees, 2) }}</h3>
-                <p>Pembayaran yang Diterima Sepanjang Waktu</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="{{ url('admin/fees_collection/collect_fees_report') }}" class="small-box-footer">Info Lebih Lanjut<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
 
-           <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>Rp{{ number_format($getTotalTodayFees, 2) }}</h3>
-                <p>Total Pembayaran yang Diterima</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="{{ url('admin/fees_collection/collect_fees_report?start_created_date='.date('Y-m-d').'&end_created_date='.date('Y-m-d').'') }}" class="small-box-footer">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
+
+         
 
 
           <div class="col-lg-3 col-6">

@@ -18,7 +18,6 @@ use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\CommunicateController;
 use App\Http\Controllers\HomeworkController;
-use App\Http\Controllers\FeesCollectionController;
 use App\Http\Controllers\ChatController;
 
 
@@ -259,20 +258,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/homework/homework_report', [HomeworkController::class, 'homework_report']);
 
 
-    Route::get('admin/fees_collection/collect_fees', [FeesCollectionController::class, 'collect_fees']);
-    Route::get('admin/fees_collection/collect_fees_report', [FeesCollectionController::class, 'collect_fees_report']);
-
-    Route::post('admin/fees_collection/export_collect_fees_report', [FeesCollectionController::class, 'export_collect_fees_report']);
-
-
-
-    Route::get('admin/fees_collection/collect_fees/add_fees/{student_id}', [FeesCollectionController::class, 'collect_fees_add']);
-
-    Route::post('admin/fees_collection/collect_fees/add_fees/{student_id}', [FeesCollectionController::class, 'collect_fees_insert']);
-
-
-
-
 });
 
 
@@ -369,18 +354,6 @@ Route::group(['middleware' => 'student'], function () {
     Route::get('student/my_submitted_homework', [HomeworkController::class, 'HomeworkSubmittedStudent']);
 
 
-    Route::get('student/fees_collection', [FeesCollectionController::class, 'CollectFeesStudent']);
-
-    Route::post('student/fees_collection', [FeesCollectionController::class, 'CollectFeesStudentPayment']);
-
-
-    Route::get('student/paypal/payment-error', [FeesCollectionController::class, 'PaymentError']);
-    Route::get('student/paypal/payment-success', [FeesCollectionController::class, 'PaymentSuccess']);
-
-    Route::get('student/stripe/payment-error', [FeesCollectionController::class, 'PaymentError']);
-    Route::get('student/stripe/payment-success', [FeesCollectionController::class, 'PaymentSuccessStripe']);
-
-
 
 
 });
@@ -420,16 +393,4 @@ Route::group(['middleware' => 'parent'], function () {
     Route::get('parent/my_student/submitted_homewrok/{id}', [HomeworkController::class, 'SubmittedHomeworkStudentParent']);
 
 
-     Route::get('parent/my_student/fees_collection/{student_id}', [FeesCollectionController::class, 'CollectFeesStudentParent']);
-
-     Route::post('parent/my_student/fees_collection/{student_id}', [FeesCollectionController::class, 'CollectFeesStudentPaymentParent']);
-
-
-    Route::get('parent/paypal/payment-error/{student_id}', [FeesCollectionController::class, 'PaymentErrorParent']);
-    Route::get('parent/paypal/payment-success/{student_id}', [FeesCollectionController::class, 'PaymentSuccessParent']);
-
-
-    Route::get('parent/stripe/payment-error/{student_id}', [FeesCollectionController::class, 'PaymentErrorParent']);
-
-     Route::get('parent/stripe/payment-success/{student_id}', [FeesCollectionController::class, 'PaymentSuccessStripeParent']);
 });

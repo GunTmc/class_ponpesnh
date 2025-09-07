@@ -27,7 +27,6 @@ class ClassController extends Controller
         // Validasi input
         $request->validate([
             'name' => 'required|string|max:255',
-            'amount' => 'required|integer|min:0',
             'status' => 'required|in:0,1'
         ]);
 
@@ -38,7 +37,6 @@ class ClassController extends Controller
 
         $save = new ClassModel;
         $save->name = $request->input('name');
-        $save->amount = $request->input('amount');
         $save->status = $request->input('status');
         $save->created_by = Auth::user()->getKey();
         $save->save();
@@ -62,7 +60,6 @@ class ClassController extends Controller
         // Validasi input
         $request->validate([
             'name' => 'required|string|max:255',
-            'amount' => 'required|integer|min:0',
             'status' => 'required|in:0,1'
         ]);
 
@@ -73,7 +70,6 @@ class ClassController extends Controller
         }
 
         $save->name = $request->input('name');
-        $save->amount = $request->input('amount');
         $save->status = $request->input('status');
         $save->save();
 
