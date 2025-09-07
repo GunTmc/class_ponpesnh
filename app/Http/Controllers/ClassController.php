@@ -32,7 +32,7 @@ class ClassController extends Controller
 
         // Pastikan user ter-autentikasi
         if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'Please login first');
+            return redirect()->route('login')->with('error', 'Tolong login terlebih dahulu');
         }
 
         $save = new ClassModel;
@@ -41,7 +41,7 @@ class ClassController extends Controller
         $save->created_by = Auth::user()->getKey();
         $save->save();
 
-        return redirect('admin/class/list')->with('success', "Class Successfully Created");
+        return redirect('admin/class/list')->with('success', "Kelas Berhasil Ditambahkan");
     }
 
     public function edit($id)
@@ -73,7 +73,7 @@ class ClassController extends Controller
         $save->status = $request->input('status');
         $save->save();
 
-        return redirect('admin/class/list')->with('success', "Class Successfully Updated");
+        return redirect('admin/class/list')->with('success', "Kelas Berhasil Diperbarui");
     }
 
     public function delete($id)

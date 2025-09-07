@@ -61,14 +61,10 @@ Route::post('reset/{token}', [AuthController::class, 'PostReset']);
 
 Route::group(['middleware' => 'common'], function () {
 
-     Route::get('chat', [ChatController::class, 'chat']);
-     Route::post('submit_message', [ChatController::class, 'submit_message']);
-     Route::post('get_chat_windows', [ChatController::class, 'get_chat_windows']);
-     Route::post('get_chat_search_user', [ChatController::class, 'get_chat_search_user']);
-
-
-
-
+    Route::get('chat', [ChatController::class, 'chat']);
+    Route::post('submit_message', [ChatController::class, 'submit_message']);
+    Route::post('get_chat_windows', [ChatController::class, 'get_chat_windows']);
+    Route::post('get_chat_search_user', [ChatController::class, 'get_chat_search_user']);
 });
 
 
@@ -100,7 +96,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/teacher/export_excel', [TeacherController::class, 'export_excel']);
 
 
-         // student
+    // student
 
     Route::get('admin/student/list', [StudentController::class, 'list']);
     Route::get('admin/student/add', [StudentController::class, 'add']);
@@ -256,8 +252,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/homework/homework/submitted/{id}', [HomeworkController::class, 'submitted']);
 
     Route::get('admin/homework/homework_report', [HomeworkController::class, 'homework_report']);
-
-
 });
 
 
@@ -352,10 +346,6 @@ Route::group(['middleware' => 'student'], function () {
 
 
     Route::get('student/my_submitted_homework', [HomeworkController::class, 'HomeworkSubmittedStudent']);
-
-
-
-
 });
 
 
@@ -391,6 +381,4 @@ Route::group(['middleware' => 'parent'], function () {
 
     Route::get('parent/my_student/homewrok/{id}', [HomeworkController::class, 'HomeworkStudentParent']);
     Route::get('parent/my_student/submitted_homewrok/{id}', [HomeworkController::class, 'SubmittedHomeworkStudentParent']);
-
-
 });

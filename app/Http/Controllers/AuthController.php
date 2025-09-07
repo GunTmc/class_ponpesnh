@@ -60,11 +60,11 @@ class AuthController extends Controller
             {
                 return redirect('parent/dashboard');
             }
-            
+
         }
         else
         {
-            return redirect()->back()->with('error', 'Please enter currect email and password');
+            return redirect()->back()->with('error', 'Tolong Masukkan Email dan Password yang Valid');
         }
 
      }
@@ -84,11 +84,11 @@ class AuthController extends Controller
 
             Mail::to($user->email)->send(new ForgotPasswordMail($user));
 
-            return redirect()->back()->with('success', "Please check your email and reset your password");   
+            return redirect()->back()->with('success', "Tolong cek email Anda dan atur ulang kata sandi Anda");
         }
         else
         {
-            return redirect()->back()->with('error', "Email not found in the system.");
+            return redirect()->back()->with('error', "Email tidak ditemukan di dalam sistem.");
         }
      }
 
@@ -103,7 +103,7 @@ class AuthController extends Controller
         else
         {
             abort(404);
-        }    
+        }
      }
 
      public function PostReset($token, Request $request)
@@ -115,11 +115,11 @@ class AuthController extends Controller
             $user->remember_token = Str::random(30);
             $user->save();
 
-            return redirect(url(''))->with('success', "Password successfully reset");
+            return redirect(url(''))->with('success', "Password berhasil diubah, silakan login.");
         }
         else
         {
-            return redirect()->back()->with('error', "Password and confirm password does not match");
+            return redirect()->back()->with('error', "Password dan Konfirmasi Password tidak sesuai.");
         }
      }
 

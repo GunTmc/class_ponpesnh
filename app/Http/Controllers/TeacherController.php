@@ -22,7 +22,7 @@ class TeacherController extends Controller
     public function list()
     {
         $data['getRecord'] = User::getTeacher();
-        $data['header_title'] = "Teacher List";
+        $data['header_title'] = "List Guru";
         return view('admin.teacher.list', $data);
     }
 
@@ -30,7 +30,7 @@ class TeacherController extends Controller
 
     public function add()
     {
-        $data['header_title'] = "Add New Teacher";
+        $data['header_title'] = "Tambahkan Guru Baru";
         return view('admin.teacher.add', $data);
     }
 
@@ -79,7 +79,7 @@ class TeacherController extends Controller
         $teacher->user_type = 2;
         $teacher->save();
 
-        return redirect('admin/teacher/list')->with('success', "Teacher Successfully Created");
+        return redirect('admin/teacher/list')->with('success', "Teacher Berhasil Ditambahkan");
     }
 
     public function edit($id)
@@ -140,7 +140,7 @@ class TeacherController extends Controller
 
         $teacher->save();
 
-        return redirect('admin/teacher/list')->with('success', "Teacher Successfully Updated");
+        return redirect('admin/teacher/list')->with('success', "Teacher Berhasil Diperbarui");
     }
 
 
@@ -150,7 +150,7 @@ class TeacherController extends Controller
             $getRecord = User::getSingle($id);
 
             if (!empty($getRecord)) {
-                
+
                 $getRecord->delete();
 
                 return redirect()->back()->with('success', "Teacher berhasil dihapus permanen");

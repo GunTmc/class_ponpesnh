@@ -34,7 +34,7 @@ class SubjectController extends Controller
         $save->created_by = Auth::user()->id;
         $save->save();
 
-        return redirect('admin/subject/list')->with('success', "Subject Sucessfully Created");
+        return redirect('admin/subject/list')->with('success', "Subject Berhasil Ditambahkan");
     }
 
     public function edit($id)
@@ -56,7 +56,7 @@ class SubjectController extends Controller
         $save->status = trim($request->status);
         $save->save();
 
-        return redirect('admin/subject/list')->with('success', "Subject Sucessfully Updated");
+        return redirect('admin/subject/list')->with('success', "Subject Berhasil Diperbarui");
     }
 
     public function delete($id)

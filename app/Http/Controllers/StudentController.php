@@ -36,7 +36,7 @@ class StudentController extends Controller
             ->orderBy('name', 'asc')
             ->get();
 
-        $data['header_title'] = "Add New Student";
+        $data['header_title'] = "Tambahkan Siswa Baru";
         return view('admin.student.add', $data);
     }
 
@@ -56,7 +56,7 @@ class StudentController extends Controller
         $user->admission_number = trim($request->admission_number);
         $user->roll_number = trim($request->roll_number);
         $user->class_id = trim($request->class_id);
-        $user->parent_id = !empty($request->parent_id) ? trim($request->parent_id) : null; // Tambahkan ini
+        $user->parent_id = !empty($request->parent_id) ? trim($request->parent_id) : null;
         $user->gender = trim($request->gender);
 
         if (!empty($request->date_of_birth)) {
@@ -194,7 +194,7 @@ class StudentController extends Controller
     {
         // Cek apakah user sudah login
         if (!auth()->check()) {
-            return redirect()->route('login')->with('error', 'Please login first');
+            return redirect()->route('login')->with('error', 'Tolong login terlebih dahulu');
         }
 
         $data['getRecord'] = User::getTeacherStudent(auth()->id());

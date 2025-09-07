@@ -21,13 +21,13 @@ class ParentController extends Controller
     public function list()
     {
         $data['getRecord'] = User::getParent();
-        $data['header_title'] = "Parent List";
+        $data['header_title'] = "List Orang Tua";
         return view('admin.parent.list',$data);
     }
 
     public function add()
     {
-        $data['header_title'] = "Add New Parent";
+        $data['header_title'] = "Tambahkan Orang Tua Baru";
         return view('admin.parent.add',$data);
     }
 
@@ -66,7 +66,7 @@ class ParentController extends Controller
         $student->user_type = 4;
         $student->save();
 
-        return redirect('admin/parent/list')->with('success', "Parent Successfully Created");
+        return redirect('admin/parent/list')->with('success', "Parent Berhasil Ditambahkan");
     }
 
 
@@ -129,7 +129,7 @@ class ParentController extends Controller
 
         $student->save();
 
-        return redirect('admin/parent/list')->with('success', "Parent Successfully Updated");
+        return redirect('admin/parent/list')->with('success', "Parent Berhasil Diperbarui");
     }
 
 
@@ -141,7 +141,7 @@ class ParentController extends Controller
             $getRecord->is_delete = 1;
             $getRecord->save();
 
-            return redirect()->back()->with('success', "Parent Successfully Deleted");
+            return redirect()->back()->with('success', "Parent Berhasil Dihapus");
         }
         else
         {
@@ -167,7 +167,7 @@ class ParentController extends Controller
         $student->parent_id = $parent_id;
         $student->save();
 
-        return redirect()->back()->with('success', "Student Successfully Assign");
+        return redirect()->back()->with('success', "Siswa Berhasil Ditugaskan ke Orang Tua");
     }
 
     public function AssignStudentParentDelete($student_id)
@@ -176,7 +176,7 @@ class ParentController extends Controller
         $student->parent_id = null;
         $student->save();
 
-        return redirect()->back()->with('success', "Student Successfully Assign Deleted");
+        return redirect()->back()->with('success', "Siswa Berhasil Dilepaskan dari Orang Tua");
     }
 
 

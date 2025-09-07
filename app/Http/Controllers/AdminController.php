@@ -12,14 +12,14 @@ class AdminController extends Controller
     public function list()
     {
         $data['getRecord'] = User::getAdmin();
-        $data['header_title'] = "Admin List";
+        $data['header_title'] = "List Admin";
         return view('admin.admin.list',$data);
     }
 
 
     public function add()
     {
-        $data['header_title'] = "Add New Admin";
+        $data['header_title'] = "Tambahkan Admin Baru";
         return view('admin.admin.add',$data);
     }
 
@@ -48,7 +48,7 @@ class AdminController extends Controller
 
         $user->save();
 
-        return redirect('admin/admin/list')->with('success', "Admin successfully created");
+        return redirect('admin/admin/list')->with('success', "Admin Berhasil Ditambahkan");
     }
 
 
@@ -99,7 +99,7 @@ class AdminController extends Controller
 
         $user->save();
 
-        return redirect('admin/admin/list')->with('success', "Admin successfully updated");
+        return redirect('admin/admin/list')->with('success', "Admin Berhasil Diperbarui");
     }
 
 
