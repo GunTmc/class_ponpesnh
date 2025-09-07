@@ -33,12 +33,12 @@
                     <input type="text" class="form-control" value="{{ Request::get('title') }}" name="title"  placeholder="Judul">
                   </div>
                   <div class="form-group col-md-3">
-                    <label>Tanggal Pemberitahuan Dari</label>
+                    <label>Dari Tanggal </label>
                     <input type="date" class="form-control" name="notice_date_from" value="{{ Request::get('notice_date_from') }}"  >
                   </div>
 
                   <div class="form-group col-md-3">
-                    <label>Tanggal Pemberitahuan Ke</label>
+                    <label>Sampai Tanggal</label>
                     <input type="date" class="form-control" name="notice_date_to" value="{{ Request::get('notice_date_to') }}"  >
                   </div>
                   <div class="form-group col-md-3">

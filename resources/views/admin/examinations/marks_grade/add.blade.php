@@ -26,19 +26,19 @@
                  {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Nama Kelas</label>
-                    <input type="text" class="form-control" value="{{ old('name') }}" name="name" required placeholder="Grade Name">
+                    <label>Nama Nilai</label>
+                    <input type="text" class="form-control" value="{{ old('name') }}" name="name" required placeholder="Nama Nilai">
                   </div>
 
 
                   <div class="form-group">
-                    <label>Persen Dari</label>
+                    <label>Nilai Minimum</label>
                     <input type="number" class="form-control" value="{{ old('percent_from') }}" name="percent_from" required placeholder="">
                   </div>
 
 
                   <div class="form-group">
-                    <label>Persen Kepada</label>
+                    <label>Nilai Maksimum</label>
                     <input type="number" class="form-control" value="{{ old('percent_to') }}" name="percent_to" required placeholder="">
                   </div>
 

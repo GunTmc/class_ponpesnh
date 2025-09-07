@@ -30,7 +30,7 @@
                     <tr>
                       <th>Mata Pelajaran</th>
                       <th>Pekerjaan Kelas</th>
-                      <th>Pekerjaan Tes</th>
+                      <th>Tes</th>
                       <th>Pekerjaan Rumah</th>
                       <th>Ujian</th>
                       <th>Total Skor</th>

@@ -137,7 +137,7 @@
                                   </div>
 
                                   <div style="margin-bottom: 10px;">
-                                      Pekerjaan Tes
+                                      Tes
                                       <input type="text" id="test_work_{{ $student->id }}{{ $subject->subject_id }}" name="mark[{{ $i }}][test_work]" style="width:200px;" placeholder="Masukkan Nilai" value="{{ !empty($getMark->test_work) ? $getMark->test_work : ''  }}" class="form-control">
                                   </div>
 
