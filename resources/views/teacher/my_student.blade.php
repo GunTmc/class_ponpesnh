@@ -58,8 +58,6 @@
                       <th>Kelas</th>
                       <th>Jenis Kelamin</th>
                       <th>Tanggal Lahir </th>
-                      <th>Kasta </th>
-                      <th>Agama </th>
                       <th>Nomor HP</th>
                       <th>Tanggal Penerimaan </th>
                       <th>Golongan Darah </th>
@@ -90,7 +88,7 @@
                               @endif
                           </td>
 
-                          
+
                           <td>{{ $value->mobile_number }}</td>
                           <td>
                             @if(!empty($value->admission_date))

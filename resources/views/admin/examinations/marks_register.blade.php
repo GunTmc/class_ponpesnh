@@ -115,7 +115,7 @@
 
                                     if(!empty($getMark))
                                     {
-                                        $totalMark = $getMark->class_work + $getMark->home_work + $getMark->test_work + $getMark->exam;
+                                        $totalMark = $getMark->home_work + $getMark->exam;
                                     }
 
                                     $totalStudentMark = $totalStudentMark+$totalMark;
@@ -123,22 +123,13 @@
 
                                 <td>
                                   <div style="margin-bottom: 10px;">
-                                      Pekerjaan Kelas
+                                      Pekerjaan Rumah
 
                                       <input type="hidden" name="mark[{{ $i }}][full_marks]" value="{{ $subject->full_marks }}">
                                       <input type="hidden" name="mark[{{ $i }}][passing_mark]" value="{{ $subject->passing_mark }}">
                                       <input type="hidden" name="mark[{{ $i }}][id]" value="{{ $subject->id }}">
                                       <input type="hidden" name="mark[{{ $i }}][subject_id]" value="{{ $subject->subject_id }}">
-                                      <input type="text" name="mark[{{ $i }}][class_work]" id="class_work_{{ $student->id }}{{ $subject->subject_id }}" style="width:200px;" placeholder="Masukkan Nilai" value="{{ !empty($getMark->class_work) ? $getMark->class_work : ''  }}" class="form-control">
-                                  </div>
-                                  <div style="margin-bottom: 10px;">
-                                      Pekerjaan Rumah
                                       <input type="text" id="home_work_{{ $student->id }}{{ $subject->subject_id }}" name="mark[{{ $i }}][home_work]" style="width:200px;" placeholder="Masukkan Nilai" value="{{ !empty($getMark->home_work) ? $getMark->home_work : ''  }}" class="form-control">
-                                  </div>
-
-                                  <div style="margin-bottom: 10px;">
-                                      Tes
-                                      <input type="text" id="test_work_{{ $student->id }}{{ $subject->subject_id }}" name="mark[{{ $i }}][test_work]" style="width:200px;" placeholder="Masukkan Nilai" value="{{ !empty($getMark->test_work) ? $getMark->test_work : ''  }}" class="form-control">
                                   </div>
 
                                   <div style="margin-bottom: 10px;">
@@ -258,9 +249,7 @@
     var class_id = $(this).attr('data-class');
     var id = $(this).attr('data-schedule');
 
-    var class_work = $('#class_work_'+student_id+subject_id).val();
     var home_work = $('#home_work_'+student_id+subject_id).val();
-    var test_work = $('#test_work_'+student_id+subject_id).val();
     var exam = $('#exam_'+student_id+subject_id).val();
 
 
@@ -274,9 +263,7 @@
             subject_id : subject_id,
             exam_id : exam_id,
             class_id : class_id,
-            class_work : class_work,
             home_work : home_work,
-            test_work : test_work,
             exam : exam
           },
           dataType : "json",

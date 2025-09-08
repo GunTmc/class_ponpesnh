@@ -1,5 +1,15 @@
 @extends('layouts.app')
-@section('content')
+@sec                  <thead>
+                    <tr>
+                      <th>Mata Pelajaran</th>
+                      <th>Pekerjaan Rumah</th>
+                      <th>Ujian</th>
+                      <th>Skor Total</th>
+                      <th>Nilai Kelulusan</th>
+                      <th>Nilai Penuh</th>
+                      <th>Hasil</th>
+                    </tr>
+                  </thead>')
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -52,8 +62,6 @@
                         @endphp
                     <tr>
                       <td style="width: 300px">{{ $exam['subject_name'] }}</td>
-                      <td>{{ $exam['class_work'] }}</td>
-                      <td>{{ $exam['test_work'] }}</td>
                       <td>{{ $exam['home_work'] }}</td>
                       <td>{{ $exam['exam'] }}</td>
                       <td>{{ $exam['total_score'] }}</td>

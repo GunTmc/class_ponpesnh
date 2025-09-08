@@ -22,24 +22,27 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'last_name',
+        'last_name', 
         'email',
+        'email_verified_at',
         'password',
         'user_type',
         'admission_number',
-        'roll_number',
+        'roll_number', 
         'class_id',
-        'parent_id', // Sudah ada di database
         'gender',
         'date_of_birth',
         'mobile_number',
         'admission_date',
+        'profile_pic',
         'blood_group',
         'height',
         'weight',
         'status',
-        'profile_pic',
-        'is_delete',
+        'parent_id',
+        'created_at',
+        'updated_at'
+        // Pastikan 'caste' dan 'religion' tidak ada di sini
     ];
 
 

@@ -200,15 +200,15 @@ class ExaminationsController extends Controller
                 $getExamSchedule = ExamScheduleModel::getSingle($mark['id']);
                 $full_marks = $getExamSchedule->full_marks;
 
-                $class_work = !empty($mark['class_work']) ? $mark['class_work'] : 0;
+                // Hapus class_work dan test_work, hanya gunakan home_work dan exam
                 $home_work = !empty($mark['home_work']) ? $mark['home_work'] : 0;
-                $test_work = !empty($mark['test_work']) ? $mark['test_work'] : 0;
                 $exam = !empty($mark['exam']) ? $mark['exam'] : 0;
 
                 $full_marks = !empty($mark['full_marks']) ? $mark['full_marks'] : 0;
                 $passing_mark = !empty($mark['passing_mark']) ? $mark['passing_mark'] : 0;
 
-                $total_mark = $class_work + $home_work + $test_work + $exam;
+                // Total hanya dari home_work dan exam
+                $total_mark = $home_work + $exam;
 
                 if ($full_marks >= $total_mark) {
                     $getMark = MarksRegisterModel::CheckAlreadyMark($request->student_id, $request->exam_id, $request->class_id, $mark['subject_id']);
@@ -223,9 +223,9 @@ class ExaminationsController extends Controller
                     $save->exam_id      = $request->exam_id;
                     $save->class_id     = $request->class_id;
                     $save->subject_id   = $mark['subject_id'];
-                    $save->class_work   = $class_work;
+                    $save->class_work   = 0; // Set ke 0
                     $save->home_work    = $home_work;
-                    $save->test_work    = $test_work;
+                    $save->test_work    = 0; // Set ke 0
                     $save->exam         = $exam;
                     $save->full_marks    = $full_marks;
                     $save->passing_mark  = $passing_mark;
@@ -253,12 +253,12 @@ class ExaminationsController extends Controller
 
         $full_marks = $getExamSchedule->full_marks;
 
-        $class_work = !empty($request->class_work) ? $request->class_work : 0;
+        // Hapus class_work dan test_work
         $home_work = !empty($request->home_work) ? $request->home_work : 0;
-        $test_work = !empty($request->test_work) ? $request->test_work : 0;
         $exam = !empty($request->exam) ? $request->exam : 0;
 
-        $total_mark = $class_work + $home_work + $test_work + $exam;
+        // Total hanya dari home_work dan exam
+        $total_mark = $home_work + $exam;
 
         if ($full_marks >= $total_mark) {
             $getMark = MarksRegisterModel::CheckAlreadyMark($request->student_id, $request->exam_id, $request->class_id, $request->subject_id);
@@ -274,9 +274,9 @@ class ExaminationsController extends Controller
             $save->exam_id      = $request->exam_id;
             $save->class_id     = $request->class_id;
             $save->subject_id   = $request->subject_id;
-            $save->class_work   = $class_work;
+            $save->class_work   = 0; // Set ke 0
             $save->home_work    = $home_work;
-            $save->test_work    = $test_work;
+            $save->test_work    = 0; // Set ke 0
             $save->exam         = $exam;
             $save->full_marks    = $getExamSchedule->full_marks;
             $save->passing_mark  = $getExamSchedule->passing_mark;
@@ -390,11 +390,11 @@ class ExaminationsController extends Controller
 
             $dataSubject = array();
             foreach ($getExamSubject as $exam) {
-                $total_score = $exam['class_work'] +  $exam['test_work'] + $exam['home_work'] + $exam['exam'];
+                $total_score = $exam['home_work'] + $exam['exam'];
                 $dataS = array();
                 $dataS['subject_name'] = $exam['subject_name'];
-                $dataS['class_work'] = $exam['class_work'];
-                $dataS['test_work'] = $exam['test_work'];
+                $dataS['class_work'] = 0;
+                $dataS['test_work'] = 0;
                 $dataS['home_work'] = $exam['home_work'];
                 $dataS['exam'] = $exam['exam'];
                 $dataS['total_score'] = $total_score;
@@ -428,12 +428,12 @@ class ExaminationsController extends Controller
 
         $dataSubject = array();
         foreach ($getExamSubject as $exam) {
-            $total_score = $exam['class_work'] +  $exam['test_work'] + $exam['home_work'] + $exam['exam'];
+            $total_score = $exam['home_work'] + $exam['exam'];
 
             $dataS = array();
             $dataS['subject_name'] = $exam['subject_name'];
-            $dataS['class_work'] = $exam['class_work'];
-            $dataS['test_work'] = $exam['test_work'];
+            $dataS['class_work'] = 0;
+            $dataS['test_work'] = 0;
             $dataS['home_work'] = $exam['home_work'];
             $dataS['exam'] = $exam['exam'];
             $dataS['total_score'] = $total_score;
@@ -543,11 +543,11 @@ class ExaminationsController extends Controller
 
             $dataSubject = array();
             foreach ($getExamSubject as $exam) {
-                $total_score = $exam['class_work'] +  $exam['test_work'] + $exam['home_work'] + $exam['exam'];
+                $total_score = $exam['home_work'] + $exam['exam'];
                 $dataS = array();
                 $dataS['subject_name'] = $exam['subject_name'];
-                $dataS['class_work'] = $exam['class_work'];
-                $dataS['test_work'] = $exam['test_work'];
+                $dataS['class_work'] = 0;
+                $dataS['test_work'] = 0;
                 $dataS['home_work'] = $exam['home_work'];
                 $dataS['exam'] = $exam['exam'];
                 $dataS['total_score'] = $total_score;

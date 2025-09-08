@@ -29,8 +29,6 @@
                   <thead>
                     <tr>
                       <th>Mata Pelajaran</th>
-                      <th>Pekerjaan Kelas</th>
-                      <th>Tes</th>
                       <th>Pekerjaan Rumah</th>
                       <th>Ujian</th>
                       <th>Skor Total</th>
@@ -52,8 +50,6 @@
                         @endphp
                     <tr>
                       <td style="width: 300px">{{ $exam['subject_name'] }}</td>
-                      <td>{{ $exam['class_work'] }}</td>
-                      <td>{{ $exam['test_work'] }}</td>
                       <td>{{ $exam['home_work'] }}</td>
                       <td>{{ $exam['exam'] }}</td>
                       <td>{{ $exam['total_score'] }}</td>

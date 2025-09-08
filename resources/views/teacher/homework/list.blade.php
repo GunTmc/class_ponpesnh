@@ -125,7 +125,7 @@
                              <a href="{{ url('teacher/homework/homework/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
                              <a href="{{ url('teacher/homework/homework/delete/'.$value->id) }}" class="btn btn-danger">Delete</a>
 
-                              <a href="{{ url('teacher/homework/homework/submitted/'.$value->id) }}" class="btn btn-success">Submitted Homework</a>
+                              <a href="{{ url('teacher/homework/homework/submitted/'.$value->id) }}" class="btn btn-success">PR yang Dikumpulkan</a>
                           </td>
                         </tr>
                       @empty

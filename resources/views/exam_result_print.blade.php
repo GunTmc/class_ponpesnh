@@ -115,9 +115,7 @@
 						   <thead>
 						      <tr>
 						         <th style="text-align: left;" class="th">Mata Pelajaran</th>
-						         <th class="th">Kerja Kelas</th>
-						         <th class="th">Kerja Tes</th>
-						         <th class="th">Kerja Rumah</th>
+						         <th class="th">Pekerjaan Rumah</th>
 						         <th class="th">Ujian</th>
 						         <th class="th">Skor Total</th>
 						         <th class="th">Nilai Kelulusan</th>
@@ -138,8 +136,6 @@
                         @endphp
                     <tr>
                       <td class="td" style="width: 300px; text-align: left;">{{ $exam['subject_name'] }}</td>
-                      <td class="td">{{ $exam['class_work'] }}</td>
-                      <td class="td">{{ $exam['test_work'] }}</td>
                       <td class="td">{{ $exam['home_work'] }}</td>
                       <td class="td">{{ $exam['exam'] }}</td>
                       <td class="td">{{ $exam['total_score'] }}</td>
