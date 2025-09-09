@@ -74,17 +74,13 @@ $getHeaderSetting = App\Models\SettingModel::getSingle();
 
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
+      <p class="mb-1 text-center" style="margin-top: 15px">
         <a href="{{ url('forgot-password') }}" class="text-primary">
           <i class="fas fa-key"></i> Saya Lupa Password Saya
         </a>
       </p>
 
-      <p class="mb-1">
-        <a href="http://id-3.hostddns.us:13498" target="_blank" class="text-info">
-          <i class="fas fa-wifi"></i> Setting Wifi
-        </a>
-      </p>
+
 
     </div>
     <!-- /.card-body -->
