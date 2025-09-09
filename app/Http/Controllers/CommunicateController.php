@@ -9,6 +9,7 @@ use App\Models\NoticeBoardMessageModel;
 use App\Mail\SendEmailUserMail;
 use Auth;
 use Mail;
+
 class CommunicateController extends Controller
 {
 
@@ -21,30 +22,22 @@ class CommunicateController extends Controller
     public function SearchUser(Request $request)
     {
         $json = array();
-        if(!empty($request->search))
-        {
-            $getUser = User::SearchUser($request->search);             
+        if (!empty($request->search)) {
+            $getUser = User::SearchUser($request->search);
             foreach ($getUser as $value) {
                 $type = '';
-                if($value->user_type == 1)
-                {
+                if ($value->user_type == 1) {
                     $type = 'Admin';
-                }
-                else if($value->user_type == 2)
-                {
+                } else if ($value->user_type == 2) {
                     $type = 'Teacher';
-                }
-                else if($value->user_type == 3)
-                {
+                } else if ($value->user_type == 3) {
                     $type = 'Student';
-                }
-                else if($value->user_type == 4)
-                {
+                } else if ($value->user_type == 4) {
                     $type = 'Parent';
                 }
 
-                $name = $value->name.' '.$value->last_name.' - '. $type;
-                $json[] = ['id'=> $value->id, 'text'=> $name];
+                $name = $value->name . ' ' . $value->last_name . ' - ' . $type;
+                $json[] = ['id' => $value->id, 'text' => $name];
             }
         }
 
@@ -53,34 +46,30 @@ class CommunicateController extends Controller
 
     public function SendEmailUser(Request $request)
     {
-    
 
-        if(!empty($request->user_id))
-        {
+
+        if (!empty($request->user_id)) {
             $user = User::getSingle($request->user_id);
             $user->send_message = $request->message;
             $user->send_subject = $request->subject;
 
-            Mail::to($user->email)->send(new SendEmailUserMail($user));            
-        }   
+            Mail::to($user->email)->send(new SendEmailUserMail($user));
+        }
 
-        if(!empty($request->message_to))
-        {
-            foreach($request->message_to as $user_type)
-            {
+        if (!empty($request->message_to)) {
+            foreach ($request->message_to as $user_type) {
                 $getUser = User::getUser($user_type);
-                foreach ($getUser as $user) 
-                {
+                foreach ($getUser as $user) {
                     $user->send_message = $request->message;
                     $user->send_subject = $request->subject;
 
-                    Mail::to($user->email)->send(new SendEmailUserMail($user));    
+                    Mail::to($user->email)->send(new SendEmailUserMail($user));
                 }
             }
         }
 
 
-        return redirect()->back()->with('success', "Mail successfully send");        
+        return redirect()->back()->with('success', "Mail successfully send");
     }
 
     public function NoticeBoard()
@@ -89,7 +78,7 @@ class CommunicateController extends Controller
         $data['header_title'] = 'Notice Board';
         return view('admin.communicate.noticeboard.list', $data);
     }
- 
+
 
     public function AddNoticeBoard()
     {
@@ -106,20 +95,18 @@ class CommunicateController extends Controller
         $save->message = $request->message;
         $save->created_by = Auth::user()->id;
         $save->save();
-        
-        if(!empty($request->message_to))
-        {
-            foreach ($request->message_to as $message_to) 
-            {
+
+        if (!empty($request->message_to)) {
+            foreach ($request->message_to as $message_to) {
                 $message = new NoticeBoardMessageModel;
                 $message->notice_board_id = $save->id;
                 $message->message_to  = $message_to;
                 $message->save();
-            }    
+            }
         }
-        
 
-        return redirect('admin/communicate/notice_board')->with('success', "Notice Board successfully created");
+
+        return redirect('admin/communicate/notice_board')->with('success', "Pengumuman Berhasil Ditambahkan");
     }
 
     public function EditNoticeBoard($id)
@@ -129,7 +116,7 @@ class CommunicateController extends Controller
         return view('admin.communicate.noticeboard.edit', $data);
     }
 
-    
+
 
     public function UpdateNoticeBoard($id, Request $request)
     {
@@ -139,22 +126,20 @@ class CommunicateController extends Controller
         $save->publish_date = $request->publish_date;
         $save->message = $request->message;
         $save->save();
-        
+
         NoticeBoardMessageModel::DeleteRecord($id);
 
-        if(!empty($request->message_to))
-        {
-            foreach ($request->message_to as $message_to) 
-            {
+        if (!empty($request->message_to)) {
+            foreach ($request->message_to as $message_to) {
                 $message = new NoticeBoardMessageModel;
                 $message->notice_board_id = $save->id;
                 $message->message_to  = $message_to;
                 $message->save();
-            }    
+            }
         }
-        
 
-        return redirect('admin/communicate/notice_board')->with('success', "Notice Board successfully updated");
+
+        return redirect('admin/communicate/notice_board')->with('success', "Pengumuman Berhasil Diubah");
     }
 
     public function DeleteNoticeBoard($id)
@@ -164,11 +149,11 @@ class CommunicateController extends Controller
 
         NoticeBoardMessageModel::DeleteRecord($id);
 
-        return redirect()->back()->with('success', "Notice Board successfully delted");
+        return redirect()->back()->with('success', "Pengumuman Berhasil Dihapus");
     }
 
 
-    // student side work 
+    // student side work
 
     public function MyNoticeBoardStudent()
     {
@@ -177,7 +162,7 @@ class CommunicateController extends Controller
         return view('student.my_notice_board', $data);
     }
 
-    // teacher side work   
+    // teacher side work
 
     public function MyNoticeBoardTeacher()
     {
@@ -186,9 +171,9 @@ class CommunicateController extends Controller
         return view('teacher.my_notice_board', $data);
     }
 
-    // parent side work 
+    // parent side work
 
-    
+
 
     public function MyNoticeBoardParent()
     {
@@ -203,8 +188,4 @@ class CommunicateController extends Controller
         $data['header_title'] = 'My Notice Board';
         return view('parent.my_student_notice_board', $data);
     }
-
-    
-    
 }
-

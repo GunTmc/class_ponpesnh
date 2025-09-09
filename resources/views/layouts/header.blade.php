@@ -224,7 +224,7 @@
           <li class="nav-item">
             <a href="{{ url('admin/communicate/notice_board') }}" class="nav-link @if(Request::segment(3) == 'notice_board') active @endif">
               <i class="far fa-circle nav-icon"></i>
-              <p>Papan Pengumuman</p>
+              <p>Pengumuman</p>
             </a>
           </li>
 
@@ -486,7 +486,7 @@
         <a href="{{ url('student/my_notice_board') }}" class="nav-link @if(Request::segment(2) == 'my_notice_board') active @endif">
           <i class="nav-icon fas fa-bullhorn"></i>
           <p>
-            Papan Pengumuman Saya
+            Pengumuman Saya
           </p>
         </a>
       </li>
@@ -551,7 +551,7 @@
         <a href="{{ url('parent/my_student_notice_board') }}" class="nav-link @if(Request::segment(2) == 'my_student_notice_board') active @endif">
           <i class="nav-icon fas fa-bullhorn"></i>
           <p>
-            Papan Pengumuman Siswa Saya
+            Pengumuman Siswa Saya
           </p>
         </a>
       </li>
@@ -560,7 +560,7 @@
         <a href="{{ url('parent/my_notice_board') }}" class="nav-link @if(Request::segment(2) == 'my_notice_board') active @endif">
           <i class="nav-icon fas fa-bullhorn"></i>
           <p>
-            Papan Pengumuman Saya
+            Pengumuman Saya
           </p>
         </a>
       </li>

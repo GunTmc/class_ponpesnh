@@ -40,7 +40,7 @@
 
 
                   <div class="form-group">
-                    <label>User (Student / Parent / Teacher)</label>
+                    <label>User (Siswa / Orang Tua / Guru)</label>
                     <select name="user_id" class="form-control select2" style="width: 100%;">
                       <option value="">Select</option>
                     </select>

@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1>Papan Pengumuman Saya</h1>
+            <h1>Pengumuman Saya</h1>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
 
            <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Cari Papan Pengumuman Saya</h3>
+                <h3 class="card-title">Cari Pengumuman Saya</h3>
               </div>
               <form method="get" action="">
                 <div class="card-body">

@@ -18,7 +18,7 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          
+
 
 
 
@@ -41,7 +41,7 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3>{{ $TotalNoticeBoard }}</h3>
-                <p>Papan Pengumuman</p>
+                <p>Pengumuman</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>

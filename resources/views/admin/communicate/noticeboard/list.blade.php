@@ -5,10 +5,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Papan Pengumuman</h1>
+            <h1>Pengumuman</h1>
           </div>
           <div class="col-sm-6" style="text-align: right;">
-              <a href="{{ url('admin/communicate/notice_board/add') }}" class="btn btn-primary">Tambahkan Papan Pengumuman Baru</a>
+              <a href="{{ url('admin/communicate/notice_board/add') }}" class="btn btn-primary">Tambahkan Pengumuman Baru</a>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Cari Papan Pengumuman</h3>
+                <h3 class="card-title">Cari Pengumuman</h3>
               </div>
               <form method="get" action="">
                 <div class="card-body">
@@ -89,7 +89,7 @@
             @include('_message')
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Daftar Papan Pengumuman</h3>
+                <h3 class="card-title">Daftar Pengumuman</h3>
               </div>
               <div class="card-body p-0">
                 <table class="table table-striped">
