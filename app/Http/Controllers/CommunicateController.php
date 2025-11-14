@@ -69,7 +69,7 @@ class CommunicateController extends Controller
         }
 
 
-        return redirect()->back()->with('success', "Mail successfully send");
+        return redirect()->back()->with('success', "Email telah dikirim");
     }
 
     public function NoticeBoard()
